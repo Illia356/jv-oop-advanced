@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class FigureSupplier {
     private Random random = new Random();
-    ColorSupplier colorSupplier = new ColorSupplier();
+    private ColorSupplier colorSupplier = new ColorSupplier();
 
     public Figure getRandomFigure() {
         int figureType = random.nextInt(5);
@@ -20,7 +20,8 @@ public class FigureSupplier {
             case 3:
                 return new Square(color, random.nextInt(10) + 1);
             case 4:
-                return new IsoscelesTrapezoid(color, random.nextInt(10) + 1, random.nextInt(10) + 1, random.nextInt(10) + 1);
+                return new IsoscelesTrapezoid(color, random.nextInt(10) + 1,
+                        random.nextInt(10) + 1, random.nextInt(10) + 1);
             default:
                 return getDefaultFigure();
         }
