@@ -4,13 +4,15 @@ import java.util.Random;
 
 public class FigureSupplier {
     public static final int FIGURE_COUNT = 5;
+    public static final int MAX_RANDOM_VALUE = 10;
+
     private Random random = new Random();
     private ColorSupplier colorSupplier = new ColorSupplier();
 
     public Figure getRandomFigure() {
         int figureType = random.nextInt(FIGURE_COUNT);
         String color = colorSupplier.getRandomColor();
-        int parameter = random.nextInt(10) + 1;
+        int parameter = random.nextInt(MAX_RANDOM_VALUE) + 1;
 
         switch (figureType) {
             case 0:
